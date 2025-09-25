@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-color: #EEF4FB;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#new_task {
+    width: 65%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new_task h2 {
+    margin-top: 0;
+}
+
+#new_task input {
+    width: 83%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#new_task button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+
+#desk {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#desk > div {
+    background-color: none;
+    padding: 20px;
+    flex: 1;
+}
+
+#desk h2 {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+#desk ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#desk li {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border-left: 4px solid #ddd;
+}
+
+#desk .clear {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #C9666C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+
+#desk .trash button:hover {
+    background-color: #cc0000;
+}
+
+#desk .backlog li {
+    border-left-color: #E3E3E3;
+}
+#desk .InProcess li {
+    border-left-color: #D6E7FF;
+}
+
+#desk .Completed li {
+    border-left-color: #D7F9E0;
+}
+
+#desk .Trash li {
+    border-left-color: #FBE3E3;
+}
+
+#desk .backlog h2 {
+    background: #E3E3E3;
+    color:#756F6B;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#desk .InProcess h2 {
+    background: #D6E7FF;
+    color:#5292F0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#desk .Completed h2 {
+    background: #D7F9E0;
+    color:#79B867;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#desk .Trash h2 {
+    background: #FBE3E3;
+    color:#CE6F69;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}

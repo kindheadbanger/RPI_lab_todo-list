@@ -4,26 +4,36 @@
   box-sizing: border-box;
 }
 
-body {
-    font-family: 'Comfortaa', cursive;
-    background-color: #EEF4FB;
-    margin: 0;
-    padding: 0;
+body.board-app {
+  font-family: 'Comfortaa', cursive;
+  background-color: #EEF4FB;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-header {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+.board-app__header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
 }
 
-header h1 {
-    margin: 0;
+.board-app__header h1 {
+  margin: 0;
 }
 
-#new_task {
-    width: 65%;
+.board-app__main {
+  padding: 20px 0;
+}
+
+.board-app__inner {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.add-task {
+    width: 78%;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
@@ -31,11 +41,26 @@ header h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#new_task h2 {
-    margin-top: 0;
+.add-task__form {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-#new_task input {
+.add-task__input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task__input-wrapper label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.add-task__input-wrapper input {
     width: 83%;
     padding: 10px;
     margin-right: 10px;
@@ -43,8 +68,23 @@ header h1 {
     border-radius: 5px;
 }
 
-#new_task button {
-    padding: 10px 20px;
+.new_task_form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.new_task_form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+}
+
+.add-task__button {    padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -53,35 +93,45 @@ header h1 {
     font-family: 'Comfortaa', cursive;
 }
 
-#desk {
+.add-task__button:hover {
+  background-color: #0056b3;
+}
+
+.add-task__button svg {
+  fill: white;
+}
+
+.taskboard {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 80%;
+    width: 92%;
     margin: 20px auto;
 }
 
-#desk > div {
+.tasklist {
     background-color: none;
     padding: 20px;
     flex: 1;
 }
 
-#desk h2 {
+.tasklist h2 {
     color: #666;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
 }
 
-#desk ul {
-    list-style-type: none;
-    padding: 0;
+.tasklist__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
 }
 
-#desk li {
+.task-item {
     background: #f9f9f9;
     padding: 10px;
     margin: 8px 0;
@@ -89,38 +139,11 @@ header h1 {
     border-left: 4px solid #ddd;
 }
 
-#desk .clear {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    background-color: #C9666C;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Comfortaa', cursive;
+.task-item:hover {
+  transform: translateX(3px);
 }
 
-#desk .trash button:hover {
-    background-color: #cc0000;
-}
-
-#desk .backlog li {
-    border-left-color: #E3E3E3;
-}
-#desk .InProcess li {
-    border-left-color: #D6E7FF;
-}
-
-#desk .Completed li {
-    border-left-color: #D7F9E0;
-}
-
-#desk .Trash li {
-    border-left-color: #FBE3E3;
-}
-
-#desk .backlog h2 {
+.tasklist.backlog h2 {
     background: #E3E3E3;
     color:#756F6B;
     padding: 10px;
@@ -128,7 +151,11 @@ header h1 {
     border-radius: 5px;
 }
 
-#desk .InProcess h2 {
+.tasklist.backlog .task-item {
+  border-left-color: #E3E3E3;
+}
+
+.tasklist.inprocess h2 {
     background: #D6E7FF;
     color:#5292F0;
     padding: 10px;
@@ -136,7 +163,11 @@ header h1 {
     border-radius: 5px;
 }
 
-#desk .Completed h2 {
+.tasklist.inprocess .task-item {
+  border-left-color: #D6E7FF;
+}
+
+.tasklist.completed h2 {
     background: #D7F9E0;
     color:#79B867;
     padding: 10px;
@@ -144,10 +175,35 @@ header h1 {
     border-radius: 5px;
 }
 
-#desk .Trash h2 {
+.tasklist.completed .task-item {
+  border-left-color: #D7F9E0;
+}
+
+.tasklist.trash h2 {
     background: #FBE3E3;
     color:#CE6F69;
     padding: 10px;
     border: none;
     border-radius: 5px;
+}
+
+.tasklist.trash .task-item {
+  border-left-color: #FBE3E3;
+}
+
+.tasklist.trash .clear {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background-color: #C9666C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Comfortaa', cursive;
+  transition: background-color 0.3s ease;
+}
+
+.tasklist.trash .clear:hover {
+  background-color: #cc0000;
 }
