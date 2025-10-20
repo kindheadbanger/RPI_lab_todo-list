@@ -1,15 +1,12 @@
 import {createElement} from '../framework/render.js';
 
-function createTaskboardComponentTemplate() {
-  return (
-    `<section class="taskboard">
-    </section>`
-  );
+function createClearButtonTemplate() {
+  return `<button class="clear">Очистить корзину</button>`;
 }
 
-export default class TaskboardComponent {
+export default class ClearButtonComponent {
   getTemplate() {
-    return createTaskboardComponentTemplate();
+    return createClearButtonTemplate();
   }
 
   getElement() {

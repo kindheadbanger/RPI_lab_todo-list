@@ -4,9 +4,9 @@ function createAddTaskComponentTemplate() {
   return (
     `<section class="add-task">
         <h2>Новая задача</h2>
-        <form class="new_task_form">
+        <form class="add-task_form">
             <input type="text" placeholder="Название задачи..." required>
-            <button class="add-task__button" type="submit">+ Добавить</button>
+            <button class="add-task_button" type="submit">+ Добавить</button>
         </form>
     </section>`
   );
