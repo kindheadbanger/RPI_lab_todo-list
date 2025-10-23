@@ -4,8 +4,8 @@ function createClearButtonTemplate() {
   return `<button class="clear">Очистить корзину</button>`;
 }
 
-export default class ClearButtonComponent {
-  getTemplate() {
+export default class ClearButtonComponent extends AbstractComponent {
+  get template() {
     return createClearButtonTemplate();
   }
 

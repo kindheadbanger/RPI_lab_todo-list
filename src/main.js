@@ -1,6 +1,6 @@
 import HeaderComponent from './view/header-component.js';
 import AddTaskComponent from './view/add-task-component.js';
-import TaskBoardPresenter from './presenter/tasksboard-presenter.js';
+import TaskBoardPresenter from './presenter/taskboard-presenter.js';
 import TaskModel from './model/task-model.js';
 import {render, RenderPosition} from './framework/render.js';
 

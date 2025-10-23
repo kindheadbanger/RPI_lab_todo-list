@@ -166,3 +166,38 @@ body {
 .taskboard #boardtasks li {
     border-left-color: #E3E3E3;
 }
+
+.empty-list {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  background-color: none;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.empty-list:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+.empty-list::before {
+  content: "↓";
+  margin-right: 8px;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.empty-list:empty::before {
+  content: "Перетащите карточку";
+}
