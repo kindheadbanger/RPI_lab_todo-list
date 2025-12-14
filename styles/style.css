@@ -40,7 +40,7 @@ body {
     margin-top: 0;
 }
 
-.add-task_form input {
+.new_task_form input {
     width: 83%;
     margin: 10px auto;
     padding: 10px;
@@ -50,7 +50,7 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
-.add-task_button {
+.add-task__button {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;

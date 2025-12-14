@@ -11,13 +11,30 @@ function createTaskListComponentTemplate(title, cssClass) {
 }
 
 export default class TaskListComponent extends AbstractComponent {
-  constructor(title, cssClass) {
+  constructor({ status, label, onTaskDrop }) {
     super();
-    this.title = title;
-    this.cssClass = cssClass;
+    this.status = status;
+    this.label = label;
+    this.onTaskDrop = onTaskDrop;
+    this.#setDropHandler();
   }
 
   get template() {
-    return createTaskListComponentTemplate(this.title, this.cssClass);
+    return createTaskListComponentTemplate(this.label, this.status);
+  }
+
+  
+  #setDropHandler() {
+    const container = this.element;
+
+    container.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    container.addEventListener('drop', (event) => {
+      event.preventDefault();
+      const taskId = event.dataTransfer.getData('text/plain');
+      this.onTaskDrop(taskId, this.status);
+    });
   }
 }
